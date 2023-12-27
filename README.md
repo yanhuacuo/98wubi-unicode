@@ -1,8 +1,43 @@
-# 98五笔超集码表
 
-#### 介绍
+## 成品
 
-完整收录Unicode15.1全部汉字，覆盖
+到 [98五笔资源库](http://98wb.ysepan.com/) 中，下载【小狼毫98五笔】与【字体支持】
+
+## 存档
+
+- [github/98wubi-unicode](https://github.com/yanhuacuo/98wubi-unicode/tree/master)
+
+- [gitee/wubi98-unicode](https://gitee.com/wubi98/wubi98-unicode)
+
+## 先做字体适配
+
+一、安装字体
+
+计有六款矢量字体，黑体风格与宋体风格两种。
+超集方案的候选与拆分一律采用宋体风格，而单字与含词选单则采用GB国标字集与黑体风格。
+
+- 98WB-0.ttf
+- 98WB-1.otf
+- 98WB-2.otf
+- 98WB-3.ttf
+- 98WB-U.ttf
+- 98WB-V.ttf
+
+二、合并注册表
+
+合并注册表后，矢量字体才能被操作系统识别，这一步非常重要。
+
+## 再安装小狼毫
+
+安装完毕后，在【托盘】中，有【小狼毫输入法】的【设置】入口，可以仅勾选您所需的方案：
+
+- 单字（GB国标）
+- 含词（GB国标）
+- 超集（Unicode15.1全集）
+
+## 明细
+
+完整收录Unicode15.1全部汉字：
 
 | 文件 | 区位 | 
 | :-----| :-----|
@@ -27,7 +62,24 @@
 |cjk_KangXiBuShou_214.txt|康熙字典部首|
 |others.txt|日制文字|
 
-计 99049 个单字
+剔除PUA点位之后，计 99049 个汉字。
 
-#### 使用
-务必提前做好【字体支持】。
+## python脚本工具
+
+#### 码表解离
+
+- [unicode.py](https://gitee.com/wubi98/wubi98-unicode/blob/master/python-Unicode/unicode.py)
+
+该脚本，将目标码表解离成 20 个子码表。
+
+
+#### 缺失点位检测
+
+- [test.py](https://gitee.com/wubi98/wubi98-unicode/blob/master/python-Unicode/test.py)
+
+按照 [unicode15.1](https://www.unicode.org/Public/15.1.0/charts/CodeCharts.pdf) 的规范点位检测码表中缺失的汉字，并生成检测报告。
+
+
+## 汉字分类表
+
+[CJK-目录](https://gitee.com/wubi98/wubi98-unicode/tree/master/python-Unicode/CJK)

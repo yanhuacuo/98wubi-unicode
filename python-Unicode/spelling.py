@@ -1,4 +1,4 @@
-# 使用该脚本，可自动测试unicode15.1标准下，当前码表所缺失的字符
+# 使用该脚本，可自动纠正注解表中非专用字体的常规汉字
 import os
 current_path = os.getcwd()
 os.makedirs(current_path + "/注解修正/",exist_ok = True)

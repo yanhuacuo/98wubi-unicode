@@ -1,4 +1,4 @@
-# 使用该脚本，可自动测试unicode15.1标准下，当前码表所缺失的字符
+# 使用该脚本，可自动生成 opencc 注解表
 import os
 current_path = os.getcwd()
 os.makedirs(current_path + "/opencc注解表/",exist_ok = True)

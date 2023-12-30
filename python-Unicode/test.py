@@ -150,7 +150,7 @@ while i < 19:
             cjk_set.add(code_point)
             aline = afile.readline()  # 继续读取下一行，直到文件末尾返回空字符
     num = code_B
-    while num <= code_E:
+    while num < code_E:
         if num in cjk_set:
             pass
         else:

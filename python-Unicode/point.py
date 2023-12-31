@@ -5,7 +5,7 @@ current_path = os.getcwd()
 
 os.makedirs(current_path + "/注解修正/",exist_ok = True)
 
-pua_txt = current_path + "/注解修正/Table_已修正.txt"
+pua_txt = current_path + "/注解修正/unicode区位已修正.txt"
 
 aPUA = open(pua_txt, 'w', encoding='utf-16')
 
@@ -146,4 +146,4 @@ with open('纠正后的拆分总表.txt', 'r', encoding='utf-16') as afile:
         aline = afile.readline()  # 继续读取下一行，直到文件末尾返回空字符
         
 aPUA.close()
-print("unicode规范区位，已修正成功！")
+print("unicode规范区位，已校正，文件是【unicode区位已修正.txt】")

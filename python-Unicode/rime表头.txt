@@ -1,0 +1,24 @@
+# Rime dictionary
+# encoding: utf-8
+# 2023-12-28
+# key-word 潀-ilww
+---
+name: wubi98_U
+version: "3.0"
+sort: original
+columns:
+  - text
+  - code
+  - weight
+  - stem
+encoder:
+  exclude_patterns:
+    - '^z.*$'
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 32]
+      formula: "AaBaCaZa"
+...

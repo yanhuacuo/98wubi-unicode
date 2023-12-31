@@ -2,7 +2,7 @@
 import os
 current_path = os.getcwd()
 os.makedirs(current_path + "/注解修正/",exist_ok = True)
-pua_txt = current_path + "/注解修正/Table_已修正.txt"
+pua_txt = current_path + "/注解修正/剔除注解中的汉字.txt"
 aPUA = open(pua_txt, 'w', encoding='utf-16')
 
 right_tuple=(
@@ -189,4 +189,4 @@ with open('纠正后的拆分总表.txt', 'r', encoding='utf-16') as afile:
         writeToText(val,spelling)
         aline = afile.readline()  # 继续读取下一行，直到文件末尾返回空字符
 aPUA.close()
-print("注解修正成功！")
+print("【剔除注解中的汉字.txt】制作完毕！")

@@ -1,3 +1,5 @@
+# pip安装模块
+# pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas tqdm
 import os
 import re
 import time

@@ -83,3 +83,13 @@
 ## 汉字分类表
 
 [CJK-目录](https://gitee.com/wubi98/wubi98-unicode/tree/master/python-Unicode/CJK)
+
+## 单行单义表转换
+
+rime-table 文件夹下，有 `mk-rime.py` 可以从任意指定的「单行单义表」转为：
+
+- 多义格式码表
+- rime格式码表
+- wubi98_ci.dict.yaml 范例
+- fcitx5原生码表_(编码_词条).txt
+

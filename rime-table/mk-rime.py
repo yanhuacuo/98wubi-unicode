@@ -44,7 +44,7 @@ for phrase in sorted_DicList:
     strDic = phrase['汉字'] +'\t' + phrase['编码'] + '\n'
     sp23.writelines(strDic)
 sp23.close()
-print("排序成功，已覆盖写入！")
+print("已【排序】成功，并覆盖写入！")
 del sorted_DicList
 
 import pandas as pd
@@ -52,7 +52,8 @@ data = pd.read_csv(table_path, sep='\t',header=None,encoding='utf-16')
 data.columns = ["val", "code"]
 data = data.drop_duplicates()
 data.to_csv(table_path, sep='\t',index=False,header=False ,na_rep = 'nan', encoding='utf-16')
-print("对含重汇总表，做【去重】处理，并写入到【超集-单义表】")
+print("已【去重】处理，并覆盖写入！")
+
 
 data["freq"] = range(len(data)*10,len(data)*9,-1) #range(初值, 终值, 步长)
 dataGB = pd.read_csv(current_path + "/lib/GB18030-27533.txt", sep='\t',header=None,encoding='utf-16')
@@ -66,6 +67,8 @@ resultData = pd.merge(data, dataGB, how='left', on='val')
 del data
 del dataGB
 
+print("下面生 rime 格式的码表，稍等...")
+
 cNum = 0
 allNum = resultData.shape[0]
 
@@ -74,7 +77,8 @@ while cNum < allNum:
         resultData.iloc[cNum, 3] = resultData.iloc[cNum, 1]
     cNum += 1
 resultData.to_csv(current_path + "/生成结果/超集-rime格式码表.txt", sep='\t',index=False, header=False ,na_rep = 'nan', encoding='utf-16')
-print("【超集-rime格式码表.txt】，已写入！")
+
+print("【超集-rime格式码表.txt】，已生成！")
 
 resultData.drop(['freq', 'full_code'], axis=1, inplace=True)
 
@@ -119,13 +123,32 @@ with open(file2, 'r' ,encoding='utf-16') as f2:
 with open(file3, 'r' ,encoding='utf-8') as f3:
     content_f3 = f3.readlines()
 # 创建一个新的txt文件，并将所有内容写入其中
-merged_content = content_f1 + ['\n'] + content_f2 + ['\n'] +  content_f3
+merged_content = content_f1  + content_f2 +  content_f3
 
 output_filename = current_path + "/生成结果/wubi98_ci.dict.yaml"
 with open(output_filename, 'w' ,encoding='utf-8') as output_file:
     for line in merged_content:
-        if line == '\n':
-            line = line.strip('\n')
         output_file.write(line)
 print("已成功制作【wubi98_ci.dict.yaml】")
 
+del f1
+del f2
+del f3
+
+del content_f1
+del content_f2
+del content_f3
+
+
+print("准备制作【fcitx5原生码表】文件，")
+
+content_f1=[]
+with open(table_path, 'r' ,encoding='utf-16') as f1:
+    content_f1 = f1.readlines()
+with open(current_path + "/生成结果/fcitx5原生码表_(编码_词条).txt", 'w' ,encoding='utf-8') as fcitx5_file:
+    for line in content_f1:
+        line = line.rstrip()
+        line = line.lstrip()
+        alst = line.split('\t')
+        fcitx5_file.write(alst[1]+ ' '+ alst[0] + '\n')
+print("【fcitx5原生码表_(编码_词条).txt】已生成！")

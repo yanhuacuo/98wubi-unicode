@@ -21,7 +21,8 @@ encoder:
       formula: "AaBaCaCb"
     - length_in_range: [4, 32]
       formula: "AaBaCaZa"
-...工	a	977790	aaaa
+...
+工	a	977790	aaaa
 戈	a	977789	agny
 式	aa	977788	aayi
 藏	aa	977787	aauh

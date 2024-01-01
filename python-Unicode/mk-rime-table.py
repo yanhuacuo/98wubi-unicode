@@ -107,13 +107,26 @@ resultData = pd.merge(data, dataGB, how='left', on='val')
 del data
 del dataGB
 
-cNum = 0
-allNum = resultData.shape[0]
+from tqdm import tqdm  
+import time 
+  
+print("添加全码列，")
+def addAllCode_progress():
+    cNum = 0
+    allNum = resultData.shape[0]
+    while cNum < allNum:
+        for line in tqdm(range(allNum)):
+            # 模拟一个耗时的操作，例如解析一行数据  
+            #time.sleep(0.01)  # 暂停0.01秒来模拟耗时操作  
+            # 这里可以添加你的处理代码，例如处理每一行数据
+            if type(resultData.iloc[cNum, 3])!=type('a'):
+                resultData.iloc[cNum, 3] = resultData.iloc[cNum, 1]
+            cNum += 1
+if __name__ == "__main__":  
+    addAllCode_progress()
 
-while cNum < allNum:
-    if type(resultData.iloc[cNum, 3])!=type('a'): 
-        resultData.iloc[cNum, 3] = resultData.iloc[cNum, 1]
-    cNum += 1
+print("全码列添加成功！")
+
 resultData.to_csv(current_path + "/RIME格式码表/超集-rime格式码表.txt", sep='\t',index=False, header=False ,na_rep = 'nan',encoding='utf-16')
 print("【超集-rime格式码表.txt】，已写入！")
 

@@ -33,7 +33,7 @@ def writeToText2(aList):
     aString = aList[-1]
     aList.pop()
     strSpelling2 =""
-    code_point = ord(val)
+    code_point = ord(aString)
     hex_a = 0xe000 # PUA E000~F8FF
     hex_b = 0xf8ff # PUA E000~F8FF
     if code_point>= hex_a and code_point <= hex_b:
@@ -92,7 +92,7 @@ import pandas as pd
 data = pd.read_csv(dst_file, sep='\t',header=None,encoding='utf-16')
 data.columns = ["val", "code"]
 data = data.drop_duplicates()
-data.to_csv(dst_file, sep='\t',index=False,header=False ,encoding='utf-16')
+data.to_csv(dst_file, sep='\t',index=False,header=False ,na_rep = 'nan',encoding='utf-16')
 print("对含重汇总表，做【去重】处理，并写入到【超集-单义表】")
 
 data["freq"] = range(len(data)*10,len(data)*9,-1) #range(初值, 终值, 步长)
@@ -114,19 +114,24 @@ while cNum < allNum:
     if type(resultData.iloc[cNum, 3])!=type('a'): 
         resultData.iloc[cNum, 3] = resultData.iloc[cNum, 1]
     cNum += 1
-resultData.to_csv(current_path + "/RIME格式码表/超集-rime格式码表.txt", sep='\t',index=False, header=False ,encoding='utf-16')
+resultData.to_csv(current_path + "/RIME格式码表/超集-rime格式码表.txt", sep='\t',index=False, header=False ,na_rep = 'nan',encoding='utf-16')
 print("【超集-rime格式码表.txt】，已写入！")
 
 resultData.drop(['freq', 'full_code'], axis=1, inplace=True)
 
 print("准备制作【多义码表】文件，")
 
+del resultData
+
+resultData = pd.read_csv(dst_file, sep='\t',header=None, keep_default_na=False,encoding='utf-16')
+resultData.columns = ["val", "code"]
+
 # 合并相同编码的词条  
 resultData = resultData.groupby('code').agg({'val': ' '.join}).reset_index()
 # 按编码排序  
 resultData = resultData.sort_values('code')  
 # 导出
-resultData.to_csv(current_path + "/RIME格式码表/超集-多义表.txt", sep='\t',index=False, header=False ,encoding='utf-16')
+resultData.to_csv(current_path + "/RIME格式码表/超集-多义表.txt", sep='\t',index=False, header=False ,na_rep = 'nan',encoding='utf-16')
 
 del resultData
 

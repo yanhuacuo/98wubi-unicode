@@ -1,7 +1,7 @@
-# 使用该脚本，可自动分离【超集-RIME表.txt】或其它单行单义表中的PUA字符
+# 使用该脚本，可自动分离【超集-rime格式码表.txt】或其它单行单义表中的PUA字符
 aPUA = open('PUA.txt', 'w', encoding='utf-16')
 aRE = open('Unicode-Standard.txt', 'w', encoding='utf-16')
-with open('超集-RIME表.txt', 'r', encoding='utf-16') as afile:
+with open('超集-rime格式码表.txt', 'r', encoding='utf-16') as afile:
     aline = afile.readline()  # 读取第一行
     while aline:
         aline=aline.rstrip()

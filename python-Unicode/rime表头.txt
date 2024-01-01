@@ -5,7 +5,7 @@
 ---
 name: wubi98_U
 version: "3.0"
-sort: original
+sort: by_weight
 columns:
   - text
   - code

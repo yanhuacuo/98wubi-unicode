@@ -5,7 +5,7 @@
 ---
 name: wubi98_U
 version: "3.0"
-sort: original
+sort: by_weight
 columns:
   - text
   - code
@@ -53963,7 +53963,7 @@ encoder:
 愩	namy	1044302	namy
 慲	namy	1044301	namy
 𫺌	namy	1044300	namy
-屉		1044299	nanv
+屉	nan	1044299	nanv
 怇	nang	1044298	nang
 𮊼	nang	1044297	nang
 怈	nann	1044296	nann

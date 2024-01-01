@@ -121,7 +121,7 @@ with open(file3, 'r' ,encoding='utf-8') as f3:
 # 创建一个新的txt文件，并将所有内容写入其中
 merged_content = content_f1 + ['\n'] + content_f2 + ['\n'] +  content_f3
 
-output_filename = current_path + "/生成结果/wubi98_U.dict.yaml"
+output_filename = current_path + "/生成结果/wubi98_ci.dict.yaml"
 with open(output_filename, 'w' ,encoding='utf-8') as output_file:
     for line in merged_content:
         if line == '\n':

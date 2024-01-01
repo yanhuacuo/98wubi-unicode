@@ -1,5 +1,10 @@
 # 使用该脚本，可自动生成 rime 码表
-
+#
+#
+# pip安装模块
+# pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas tqdm
+#
+#
 # gb单字表.txt 复制为 超集-单义表.txt
 # 超集-单义表.txt 中添加【拆分总表】内读到的【全字集数据】，"a" 模式，追加写入
 # 只读模式，创建【含重表】的词典列表，以对其内容进行排序 ， 只读为 "r" 模式，

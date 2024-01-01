@@ -4,7 +4,7 @@
 
 装好 python 后，PowerShell 下输入：
 
-`pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas`
+`pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pandas tqdm`
 
 ## 介绍
 

@@ -76,9 +76,9 @@ while cNum < allNum:
     if type(resultData.iloc[cNum, 3])!=type('a'): 
         resultData.iloc[cNum, 3] = resultData.iloc[cNum, 1]
     cNum += 1
-resultData.to_csv(current_path + "/生成结果/超集-rime格式码表.txt", sep='\t',index=False, header=False ,na_rep = 'nan', encoding='utf-16')
+resultData.to_csv(current_path + "/生成结果/rime格式码表.txt", sep='\t',index=False, header=False ,na_rep = 'nan', encoding='utf-16')
 
-print("【超集-rime格式码表.txt】，已生成！")
+print("【rime格式码表.txt】，已生成！")
 
 resultData.drop(['freq', 'full_code'], axis=1, inplace=True)
 
@@ -93,14 +93,14 @@ resultData = resultData.groupby('code').agg({'val': ' '.join}).reset_index()
 # 按编码排序  
 resultData = resultData.sort_values('code')  
 # 导出
-resultData.to_csv(current_path + "/生成结果/超集-多义表.txt", sep='\t',index=False, header=False , encoding='utf-16')
+resultData.to_csv(current_path + "/生成结果/多义表.txt", sep='\t',index=False, header=False , encoding='utf-16')
 
 del resultData
 
 content_f1=[]
-with open(current_path + "/生成结果/超集-多义表.txt", 'r' ,encoding='utf-16') as f0:
+with open(current_path + "/生成结果/多义表.txt", 'r' ,encoding='utf-16') as f0:
     content_f1 = f0.readlines()
-with open(current_path + "/生成结果/超集-多义表.txt", 'w' ,encoding='utf-16') as f0:
+with open(current_path + "/生成结果/多义表.txt", 'w' ,encoding='utf-16') as f0:
     for line in content_f1:
         line = line.replace('\t'," ")
         f0.write(line)
@@ -108,7 +108,7 @@ print("制作完成【多义码表】文件！")
 
 # 定义要合并的三个txt文件名
 file1 = current_path +'/lib/rime表头.txt'
-file2 = current_path + "/生成结果/超集-rime格式码表.txt"
+file2 = current_path + "/生成结果/rime格式码表.txt"
 file3 = current_path +'/lib/rime表尾.txt'
 content_f1=[]
 content_f2=[]

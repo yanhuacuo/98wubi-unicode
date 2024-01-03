@@ -56,7 +56,6 @@ data = data.drop_duplicates()
 data.to_csv(table_path, sep='\t',index=False,header=False ,na_rep = 'nan', encoding='utf-16')
 print("已【去重】处理，并覆盖写入！")
 
-
 data["freq"] = range(len(data)*10,len(data)*9,-1) #range(初值, 终值, 步长)
 dataGB = pd.read_csv(current_path + "/lib/GB18030-27533.txt", sep='\t',header=None,encoding='utf-16')
 dataGB.columns = ["val", "full_code"]
@@ -91,9 +90,11 @@ if __name__ == "__main__":
 
 print("全码列添加成功！")
 
-resultData.to_csv(current_path + "/生成结果/rime格式码表.txt", sep='\t',index=False, header=False ,na_rep = 'nan', encoding='utf-16')
+mkText0 = current_path + "/生成结果/rime格式码表_" + os.path.basename(table_path)
 
-print("【rime格式码表.txt】，已生成！")
+resultData.to_csv(mkText0, sep='\t',index=False, header=False ,na_rep = 'nan', encoding='utf-16')
+
+print("rime格式码表，已生成！")
 
 resultData.drop(['freq', 'full_code'], axis=1, inplace=True)
 
@@ -108,14 +109,15 @@ resultData = resultData.groupby('code').agg({'val': ' '.join}).reset_index()
 # 按编码排序  
 resultData = resultData.sort_values('code')  
 # 导出
-resultData.to_csv(current_path + "/生成结果/多义表.txt", sep='\t',index=False, header=False , encoding='utf-16')
+mkText1 = current_path + "/生成结果/多义码表_" + os.path.basename(table_path)
+resultData.to_csv(mkText1, sep='\t',index=False, header=False , encoding='utf-16')
 
 del resultData
 
 content_f1=[]
-with open(current_path + "/生成结果/多义表.txt", 'r' ,encoding='utf-16') as f0:
+with open(mkText1, 'r' ,encoding='utf-16') as f0:
     content_f1 = f0.readlines()
-with open(current_path + "/生成结果/多义表.txt", 'w' ,encoding='utf-16') as f0:
+with open(mkText1, 'w' ,encoding='utf-16') as f0:
     for line in content_f1:
         line = line.replace('\t'," ")
         f0.write(line)
@@ -123,7 +125,7 @@ print("制作完成【多义码表】文件！")
 
 # 定义要合并的三个txt文件名
 file1 = current_path +'/lib/rime表头.txt'
-file2 = current_path + "/生成结果/rime格式码表.txt"
+file2 = mkText0
 file3 = current_path +'/lib/rime表尾.txt'
 content_f1=[]
 content_f2=[]
@@ -140,11 +142,15 @@ with open(file3, 'r' ,encoding='utf-8') as f3:
 # 创建一个新的txt文件，并将所有内容写入其中
 merged_content = content_f1  + content_f2 +  content_f3
 
-output_filename = current_path + "/生成结果/wubi98_ci.dict.yaml"
+mkText = os.path.basename(table_path)
+mkText =os.path.splitext(mkText)[0]
+mkText = current_path + "/生成结果/RimeDict_" + mkText + ".yaml"
+
+output_filename = mkText
 with open(output_filename, 'w' ,encoding='utf-8') as output_file:
     for line in merged_content:
         output_file.write(line)
-print("已成功制作【wubi98_ci.dict.yaml】")
+print("已成功制作 RIME 下 dict 范本！")
 
 del f1
 del f2
@@ -154,16 +160,32 @@ del content_f1
 del content_f2
 del content_f3
 
+from tqdm import tqdm  
+import time
 
 print("准备制作【fcitx5原生码表】文件，")
+
+mkText3 = current_path + "/生成结果/fcitx5_" + os.path.basename(table_path)
+fcitx5_file = open(mkText3, 'w' ,encoding='utf-8')
+
+def fcitx5_progress(content_f1):
+    i = 0
+    allNum = len(content_f1)
+    while i < allNum:
+        for i in tqdm(range(allNum)):
+            line = content_f1[i]
+            line = line.rstrip()
+            line = line.lstrip()
+            alst = line.split('\t')
+            fcitx5_file.write(alst[1]+ ' '+ alst[0] + '\n')
+            i += 1
 
 content_f1=[]
 with open(table_path, 'r' ,encoding='utf-16') as f1:
     content_f1 = f1.readlines()
-with open(current_path + "/生成结果/fcitx5原生码表_(编码_词条).txt", 'w' ,encoding='utf-8') as fcitx5_file:
-    for line in content_f1:
-        line = line.rstrip()
-        line = line.lstrip()
-        alst = line.split('\t')
-        fcitx5_file.write(alst[1]+ ' '+ alst[0] + '\n')
-print("【fcitx5原生码表_(编码_词条).txt】已生成！")
+
+if __name__ == "__main__":  
+    fcitx5_progress(content_f1)
+    content_f1=[]
+    fcitx5_file.close()
+    print("【fcitx5原生码表】已生成！")

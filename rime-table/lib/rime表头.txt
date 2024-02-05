@@ -1,10 +1,12 @@
 # Rime dictionary
 # encoding: utf-8
-# 2024-1-1
+# 2024-02-04
 # key-word 潀-ilww
+# 2024立春日修订
+# wubixiaozhu@126.com
 ---
-name: wubi98_ci
-version: "3.0"
+name: wubi98_U
+version: "3.1"
 sort: by_weight
 columns:
   - text

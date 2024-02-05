@@ -1,3 +1,9 @@
+## python模块
+
+安装：
+
+`pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple Pyarrow pandas tqdm`
+
 ## 1-去重
 
 对「单行单义」格式的码表去重

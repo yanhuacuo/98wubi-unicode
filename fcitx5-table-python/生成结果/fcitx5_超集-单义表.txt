@@ -9049,6 +9049,7 @@ bvt 𨸓
 bvt 𤿇
 bvvg 𰤧
 bvvn 𮥚
+bvvv 𭂼
 bvy 限
 bvy 𦕨
 bvyn 𦖆
@@ -30553,6 +30554,7 @@ hgej 劇
 hgeo 𪆺
 hgep 遽
 hget 𲂣
+hgew 𭂸
 hgey 䁃
 hgey 𩁋
 hgey 𥆋
@@ -30709,7 +30711,6 @@ hgqo 𥉬
 hgqt 𫿑
 hgqt 𬑞
 hgqw 𣣇
-hgqw 𭂸
 hgs 眜
 hgsf 𬑫
 hgsy 眜
@@ -54861,7 +54862,6 @@ ngjr 𢙾
 ngjr 𫅩
 ngk 司
 ngk 丮
-ngk 𭃂
 ngka 𣱇
 ngka 𢁎
 ngka 𫸙
@@ -95205,6 +95205,7 @@ vfcy 妓
 vfcy 妘
 vfcy 𡛠
 vfd 嬬
+vfd 𭃂
 vfdd 𫴷
 vfdf 𥒠
 vfdi 𫱸
@@ -96912,7 +96913,7 @@ vvb 𡿭
 vvb 𠃙
 vvbh 𨛃
 vvbh 𮱍
-vvbv 𭂼
+vvbk 𭂼
 vvby 𭽪
 vvcr 𭒌
 vvd 𡚪
@@ -104947,6 +104948,7 @@ xuxt 绨
 xuxt 綈
 xuxt 𢾼
 xuxu 弱
+xuxu 𢏽
 xuxw 𱤹
 xuxx 𬗭
 xuyy 𦅤

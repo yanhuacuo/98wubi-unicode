@@ -68,4 +68,23 @@ def merge(file1,file2):
 
 merge(destination_file,achieveText)
 
+source_file = current_path + "/wb_spelling.txt"
+wb_spelling_file = current_path + "/处理结果/4-[最终合并]wb_spelling.txt"
+
+copy_file(source_file, wb_spelling_file)
+
+merge(wb_spelling_file, destination_file)
+
+import codecs
+source_file = current_path + "/处理结果/4-[最终合并]wb_spelling.txt"
+wb_spelling_file = current_path + "/处理结果/wb_spelling.dict.yaml"
+
+# 读取UTF-16编码的文件
+with codecs.open(source_file, 'r', 'utf-16') as f:
+    content = f.read()
+ 
+# 将内容写入UTF-8编码的文件
+with codecs.open(wb_spelling_file, 'w', 'utf-8') as f:
+    f.write(content)
+
 print("重复项整合已完成！")

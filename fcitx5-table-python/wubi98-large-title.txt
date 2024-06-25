@@ -1,0 +1,11 @@
+;fcitx通用码表
+;收录 unicode15.1 规范中的全部汉字
+;https://github.com/yanhuacuo/98wubi-unicode
+KeyCode=abcdefghijklmnopqrstuvwxy
+Length=4
+Pinyin=@
+[Rule]
+e2=p11+p12+p21+p22
+e3=p11+p21+p31+p32
+a4=p11+p21+p31+n11
+[Data]

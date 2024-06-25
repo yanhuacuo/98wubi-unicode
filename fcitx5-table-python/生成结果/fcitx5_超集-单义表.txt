@@ -1462,7 +1462,6 @@ afqy 靮
 afqy 韂
 afqy 䩚
 afqy 䪌
-afqy 𦱘
 afqy 𦮖
 afqy 𦮢
 afr 靳
@@ -23847,14 +23846,12 @@ fqxf 黿
 fqxf 𰐠
 fqxn 𭎀
 fqy 朮
-fqyc 𦫣
 fqye 𡑩
 fqye 𱗥
 fqyi 朮
 fqyl 塯
 fqyl 霤
 fqyn 怷
-fqyr 㫄
 fqyy 圴
 fqyy 㽌
 fqyy 𡋝
@@ -26313,7 +26310,6 @@ gfrf 𦓸
 gfsf 𦔍
 gfsl 𣌃
 gfss 𪼬
-gfsw 𦓹
 gfsy 𤧀
 gfsy 𮴳
 gft 琽
@@ -73903,7 +73899,6 @@ rfqn 𢶉
 rfqn 𭽋
 rfqo 𬷂
 rfqt 𢷛
-rfqy 𢮔
 rfqy 𢫖
 rfsf 𱠲
 rfsh 𢹩
@@ -79542,6 +79537,7 @@ skko 𣛫
 skko 𣟭
 skks 橾
 skkt 欕
+skkw 𬃅
 skkx 𭇷
 skky 𪳏
 sklf 𪾌
@@ -79610,7 +79606,6 @@ sksk 𡃭
 sksk 𠾳
 sksk 𣗥
 sksk 𣠆
-sksk 𬃅
 sksk 𬃷
 sksn 𢣱
 skso 𪃿
@@ -83930,6 +83925,7 @@ tfsm 𩓕
 tfsu 筙
 tfsu 𦓫
 tfsu 𫂋
+tfsw 𦓹
 tfsy 𬕽
 tfsy 𭛧
 tft 箸
@@ -85193,9 +85189,9 @@ thwo 𤏀
 thwp 𥳠
 thws 𦈀
 thwv 𮍔
+thww 臮
 thww 𠂹
 thww 𦤈
-thwy 臮
 thwy 𧬑
 thwy 𥟭
 thwy 𦆗
@@ -102728,6 +102724,7 @@ xdi 𢎴
 xdiy 𦂥
 xdj 弼
 xdjf 緾
+xdjf 纒
 xdjf 𫮸
 xdjf 𱺦
 xdjg 絔
@@ -103365,6 +103362,7 @@ xhmy 緽
 xhn 顚
 xhnb 𦗁
 xhne 𭛄
+xhng 黽
 xhnm 顚
 xhnn 𢏍
 xhno 鷆
@@ -103963,7 +103961,6 @@ xnn 𫄙
 xnn 紀
 xnng 纟
 xnng 彑
-xnng 黽
 xnng ⺔
 xnng ⺰
 xnng 𦁁
@@ -104046,7 +104043,6 @@ xoiy 𦅧
 xoj 缠
 xojf 缠
 xojf 纏
-xojf 纒
 xokg 𦀭
 xokl 𬑂
 xolx 𢐮
@@ -106427,7 +106423,6 @@ yfq 䛃
 yfqh 𫴬
 yfqn 䛃
 yfqo 𱈱
-yfqy 𧩂
 yfs 谋
 yfsb 𬣌
 yfsy 诔
@@ -108393,11 +108388,13 @@ yqwy 𪴩
 yqxb 𬽇
 yqxn 𮗽
 yqy 訋
+yqyc 𦫣
 yqyf 𣁼
 yqyg 𰵀
 yqyj 𧨥
 yqyl 𧪭
 yqyq 𧫘
+yqyr 㫄
 yqyy 訋
 yr 义
 yr 离

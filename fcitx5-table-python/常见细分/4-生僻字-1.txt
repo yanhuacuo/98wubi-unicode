@@ -4275,7 +4275,7 @@
 塯	fqyl
 霤	fqyl
 怷	fqyn
-㫄	fqyr
+㫄	yqyr
 圴	fqyy
 㽌	fqyy
 堫	frbt
@@ -15933,7 +15933,7 @@
 㣠	thtu
 辠	thuj
 箎	thwb
-臮	thwy
+臮	thww
 篊	tiaw
 笵	tibb
 筂	tibb
@@ -19618,7 +19618,7 @@
 糺	xnn
 紀	xnn
 彑	xnng
-黽	xnng
+黽	xhng
 毌	xnnh
 繏	xnnw
 糹	xnny
@@ -19634,7 +19634,7 @@
 熲	xodm
 颎	xodm
 纏	xojf
-纒	xojf
+纒	xdjf
 継	xonn
 緂	xooy
 繗	xoqg
